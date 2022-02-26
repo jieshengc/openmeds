@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'dart:io';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:open_meds/DataModel/consumerInput.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:open_meds/AllScreens/compareScreen.dart';
+
 final ImagePicker _picker = ImagePicker();
 
 class ConsumerScreen extends StatefulWidget {
@@ -146,30 +149,17 @@ class _ConsumerScreenState extends State<ConsumerScreen> {
     );
   }
 
-  /// Get from gallery
-  _getFromGallery() async {
-    PickedFile? pickedFile = await _picker.getImage(
-      source: ImageSource.gallery,
-      maxWidth: 1800,
-      maxHeight: 1800,
-    );
-    if (pickedFile != null) {
-      setState(() {
-        imageFile = File(pickedFile.path);
-      });
-    }
-  }
-
   /// Get from Camera
   _getFromCamera() async {
-    PickedFile? pickedFile = await _picker.getImage(
+    File pickedFile = (await _picker.pickImage(
       source: ImageSource.camera,
-      maxWidth: 1800,
-      maxHeight: 1800,
-    );
+    )) as File;
     if (pickedFile != null) {
-      setState(() {
-        imageFile = File(pickedFile.path);
+      setState(() async {
+        imageFile = await pickedFile.copy('assets/image1.png');
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => CompareScreen()));
+
       });
     }
   }

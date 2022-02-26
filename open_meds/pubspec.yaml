@@ -39,8 +39,10 @@ dependencies:
   intl: ^0.17.0
   firebase_core: ^1.0.1
   firebase_auth: ^1.0.1
+  image_gallery_saver:
   # firebase_database: ^6.0.0-nullsafety.0
   # cloud_firestore: ^1.0.1
+
 
 dev_dependencies:
   flutter_test:
