@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:open_meds/AllScreens/landingScreen.dart';
+import 'package:open_meds/AllScreens/msdScreen.dart';
 import 'package:open_meds/AllScreens/signuppage.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -8,6 +10,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final nameController = TextEditingController();
+  final pwController = TextEditingController();
 
   @override
   void initState() {
@@ -24,7 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
           children: <Widget>[
             SizedBox(height: 150),
             Container(
-              height: 180,
+              height: 150,
               width: 400,
               decoration: BoxDecoration(
                 image: DecorationImage(
@@ -44,6 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: TextField(
+                    controller: nameController,
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: "Company Name",
@@ -60,6 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: TextField(
+                    controller: pwController,
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: "Password",
@@ -72,33 +78,60 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(height: 30,),
             Container(
               width: 250,
-              //height: 50,
+              height: 50,
               child: FlatButton(
-                child: Text('Login'),
-                color: Color(0xFF04948E),
+                child: Text('Login', style: TextStyle(color: Colors.white, fontSize: 18)),
+                color: Color(0xFF6FCACE),
                 onPressed: (){
-                  // Navigator.push(context,
-                  //     MaterialPageRoute(builder: (context) => SignUpScreen()));
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        // Retrieve the text that the user has entered by using the
+                        // TextEditingController.
+                        content: Text(nameController.text + pwController.text),
+                      );
+                    },
+                  );
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MSDScreen()));
                 },
               )
             ),
             SizedBox(height: 10),
-            Container(
-              //width: 250,
-              //height: 50,
+            SizedBox(
+              height:20,
               child: FlatButton(
-                child: Text('Register here!', style: TextStyle(decoration: TextDecoration.underline)),
-                //color: Color(0xFF04948E),
+                  child: Text('Register here!', style: TextStyle(decoration: TextDecoration.underline, color: Color(0xFF6FCACE))),
+                  onPressed: (){
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => SignUpScreen()));
+                  },
+                ),
+            ),
+            SizedBox(height: 10),
+            SizedBox(
+              height: 20, 
+              child: FlatButton(
+                child: Text('Return to Login Page!', 
+                            style: TextStyle(decoration: TextDecoration.underline, color: Color(0xFF6FCACE))),
                 onPressed: (){
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => SignUpScreen()));
+                      MaterialPageRoute(builder: (context) => LoadingScreen()));
                 },
               )
-            ),
-            //Text("Forgot Password?", style: TextStyle(color: Color.fromRGBO(143, 148, 251, 1), decoration: TextDecoration.underline),),
+            )
           ],
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    nameController.dispose();
+    pwController.dispose();
+    super.dispose();
   }
 }

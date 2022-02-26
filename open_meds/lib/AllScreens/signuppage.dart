@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:open_meds/AllScreens/msdScreen.dart';
+
+import 'package:open_meds/AllScreens/loginScreen.dart';
 
 class SignUpScreen extends StatefulWidget {
   @override
@@ -21,9 +24,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            SizedBox(height: 150),
+            SizedBox(height: 100),
             Container(
-                height: 180,
+                height: 150,
                 width: 400,
                 decoration: BoxDecoration(
                     image: DecorationImage(
@@ -99,18 +102,33 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
                 SizedBox(height: 10),
-          ],
-        ),
+              ],
+            ),
             SizedBox(height: 30,),
             Container(
                 width: 250,
-                //height: 50,
+                height: 50,
                 child: FlatButton(
-                  child: Text('Sign Up'),
-                  color: Color(0xFF04948E),
-                  onPressed: () {},
+                  child: Text('Sign Up', style: TextStyle(color: Colors.white, fontSize: 18)),
+                  color: Color(0xFF6FCACE),
+                  onPressed: () {
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) =>
+                    //     MSDScreen()
+                    //   )
+                    // );
+                  },
                 )
             ),
+            FlatButton(
+              child: Text('Login here!', style: TextStyle(decoration: TextDecoration.underline, color: Color(0xFF6FCACE))),
+              onPressed: (){
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LoginScreen()));
+              },
+            )
           ],
         ),
       ),
