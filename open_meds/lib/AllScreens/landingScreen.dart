@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:open_meds/AllScreens/consumerScreen.dart';
 import 'package:open_meds/AllScreens/loginScreen.dart';
 
 class LoadingScreen extends StatefulWidget {
@@ -38,18 +39,6 @@ class _LoadingScreenState extends State<LoadingScreen> {
             SizedBox(height: 20),
             Column(
               children: <Widget>[
-                // Container(
-                //   width: 250,
-                //   height: 80,
-                //   child: FlatButton(
-                //     child: Text('Check Product',
-                //                 textAlign: TextAlign.center,
-                //                 style: TextStyle(color: Colors.white, fontSize: 18)),
-                //     color: Color(0xFF04948E),
-                //     onPressed: () { 
-                //     },
-                //   )
-                // ),
                 Text('For Consumers',textAlign: TextAlign.center,style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold)),
                 SizedBox(height: 10,),
                 Row(
@@ -71,7 +60,6 @@ class _LoadingScreenState extends State<LoadingScreen> {
                         ),
                       ),
                     ),
-                    //SizedBox(width: 10,),
                     Container(
                       width: 30,
                       child: IconButton(
@@ -86,12 +74,12 @@ class _LoadingScreenState extends State<LoadingScreen> {
                               );
                             },
                           );
-                          // Navigator.push(context, 
-                          //   MaterialPageRoute(
-                          //     builder: (context) =>
-                          //         LoginScreen()
-                          //   )
-                          // );
+                          Navigator.push(context, 
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    ConsumerScreen()
+                              )
+                          );
                         }, 
                         icon: Icon(Icons.keyboard_arrow_right)
                       ),

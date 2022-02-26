@@ -5,13 +5,13 @@ import 'package:open_meds/DataModel/consumerInput.dart';
 import 'package:image_picker/image_picker.dart';
 final ImagePicker _picker = ImagePicker();
 
-class consumerScreen extends StatefulWidget {
+class ConsumerScreen extends StatefulWidget {
   @override
-  _consumerScreenState createState() => _consumerScreenState();
+  _ConsumerScreenState createState() => _ConsumerScreenState();
 }
 
 
-class _consumerScreenState extends State<consumerScreen> {
+class _ConsumerScreenState extends State<ConsumerScreen> {
 
   List<Person> persons = [
     Person(name: 'Bill Will', profileImg: 'img/pic-1.png', bio: "Software Developer"),
