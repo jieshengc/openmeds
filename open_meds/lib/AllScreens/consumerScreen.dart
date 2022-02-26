@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:open_meds/DataModel/consumerInput.dart';
+import 'package:image_picker/image_picker.dart';
+final ImagePicker _picker = ImagePicker();
 
 class consumerScreen extends StatefulWidget {
   @override
@@ -13,6 +16,8 @@ class _consumerScreenState extends State<consumerScreen> {
   List<Person> persons = [
     Person(name: 'Bill Will', profileImg: 'img/pic-1.png', bio: "Software Developer"),
   ];
+  /// Variables
+  late File imageFile;
 
   @override
   void initState() {
@@ -95,7 +100,9 @@ class _consumerScreenState extends State<consumerScreen> {
         icon: const Icon(Icons.add_a_photo),
         backgroundColor: Color(0xFF6FCACE),
         hoverColor: Colors.green[800],
-        onPressed: (){},
+        onPressed: (){
+          _getFromCamera();
+        },
       ),
     );
   }
@@ -137,5 +144,33 @@ class _consumerScreenState extends State<consumerScreen> {
             ),
           ),
     );
+  }
+
+  /// Get from gallery
+  _getFromGallery() async {
+    PickedFile? pickedFile = await _picker.getImage(
+      source: ImageSource.gallery,
+      maxWidth: 1800,
+      maxHeight: 1800,
+    );
+    if (pickedFile != null) {
+      setState(() {
+        imageFile = File(pickedFile.path);
+      });
+    }
+  }
+
+  /// Get from Camera
+  _getFromCamera() async {
+    PickedFile? pickedFile = await _picker.getImage(
+      source: ImageSource.camera,
+      maxWidth: 1800,
+      maxHeight: 1800,
+    );
+    if (pickedFile != null) {
+      setState(() {
+        imageFile = File(pickedFile.path);
+      });
+    }
   }
 }
