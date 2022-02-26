@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "241306708885",
+    "project_id": "openmeds-336c6",
+    "storage_bucket": "openmeds-336c6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241306708885:android:223e16a1390533c7a2249c",
+        "android_client_info": {
+          "package_name": "com.example.open_meds"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "241306708885-vphbd0574gnb8irb42t23ogcq3tiihe2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzNlO975KqbVGAWkepKeGOxNImmHGM-Ps"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "241306708885-vphbd0574gnb8irb42t23ogcq3tiihe2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
