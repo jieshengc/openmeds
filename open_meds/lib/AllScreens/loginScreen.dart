@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:open_meds/AllScreens/signuppage.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -75,7 +76,10 @@ class _LoginScreenState extends State<LoginScreen> {
               child: FlatButton(
                 child: Text('Login'),
                 color: Color(0xFF04948E),
-                onPressed: () {},
+                onPressed: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SignUpScreen()));
+                },
               )
             ),
             SizedBox(height: 10),
