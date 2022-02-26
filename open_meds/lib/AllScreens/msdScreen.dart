@@ -5,7 +5,6 @@ import 'package:open_meds/AllScreens/signuppage.dart';
 import 'package:open_meds/AllScreens/suppdistScreen.dart';
 import 'package:open_meds/AllScreens/manufScreen.dart';
 
-
 class MSDScreen extends StatefulWidget {
   @override
   _MSDScreenState createState() => _MSDScreenState();
@@ -47,6 +46,11 @@ class _MSDScreenState extends State<MSDScreen> {
                       child: Text('Add Drug (Manufacturer)',
                           textAlign: TextAlign.center,
                           style: TextStyle(color: Colors.white, fontSize: 18)),
+                      shape: RoundedRectangleBorder(side: BorderSide(
+                          color: Color(0xFF6FCACE),
+                          width: 1,
+                          style: BorderStyle.solid
+                      ), borderRadius: BorderRadius.circular(5)),
                       color: Color(0xFF6FCACE),
                       onPressed: () {
                         Navigator.push(
@@ -67,6 +71,11 @@ class _MSDScreenState extends State<MSDScreen> {
                       child: Text('Update Drug Status (Supplier/Distributor)',
                           textAlign: TextAlign.center,
                           style: TextStyle(color: Colors.white, fontSize: 18)),
+                      shape: RoundedRectangleBorder(side: BorderSide(
+                          color: Color(0xFF6FCACE),
+                          width: 1,
+                          style: BorderStyle.solid
+                      ), borderRadius: BorderRadius.circular(5)),
                       color: Color(0xFF6FCACE),
                       onPressed: () {
                         Navigator.push(
@@ -87,6 +96,11 @@ class _MSDScreenState extends State<MSDScreen> {
                       child: Text('Logout',
                           textAlign: TextAlign.center,
                           style: TextStyle(color: Colors.white, fontSize: 18)),
+                      shape: RoundedRectangleBorder(side: BorderSide(
+                          color: Color(0xFF6FCACE),
+                          width: 1,
+                          style: BorderStyle.solid
+                      ), borderRadius: BorderRadius.circular(5)),
                       color: Color(0xFF6FCACE),
                       onPressed: () {
                         Navigator.push(
