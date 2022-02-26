@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:open_meds/DataModel/consumerInput.dart';
-import 'package:open_meds/AllScreens/landingScreen.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:path_provider/path_provider.dart';
 
 final ImagePicker _picker = ImagePicker();
 
@@ -215,14 +215,15 @@ class _ConsumerScreenState extends State<ConsumerScreen> {
 
   /// Get from Camera
   _getFromCamera() async {
-    PickedFile? pickedFile = await _picker.getImage(
+    File pickedFile = await _picker.getImage(
       source: ImageSource.camera,
       maxWidth: 1800,
       maxHeight: 1800,
-    );
+    ) as File;
+    final String path = (await getApplicationDocumentsDirectory()).path;
     if (pickedFile != null) {
       setState(() {
-        imageFile = File(pickedFile.path);
+        imageFile = pickedFile.copy('$path/image1.png') as File;
       });
     }
   }
