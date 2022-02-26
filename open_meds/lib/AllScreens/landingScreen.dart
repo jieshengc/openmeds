@@ -64,16 +64,6 @@ class _LoadingScreenState extends State<LoadingScreen> {
                       width: 30,
                       child: IconButton(
                         onPressed: () {
-                          showDialog(
-                            context: context,
-                            builder: (context) {
-                              return AlertDialog(
-                                // Retrieve the text that the user has entered by using the
-                                // TextEditingController.
-                                content: Text(myController.text),
-                              );
-                            },
-                          );
                           Navigator.push(context, 
                             MaterialPageRoute(
                                 builder: (context) =>
