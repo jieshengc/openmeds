@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:open_meds/AllScreens/msdScreen.dart';
+
 
 class SignUpScreen extends StatefulWidget {
   @override
@@ -108,7 +110,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 child: FlatButton(
                   child: Text('Sign Up'),
                   color: Color(0xFF04948E),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                        MSDScreen()
+                      )
+                    );
+                  },
                 )
             ),
           ],
