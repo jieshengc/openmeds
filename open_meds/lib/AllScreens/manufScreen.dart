@@ -124,14 +124,31 @@ class _ManufScreenState extends State<ManufScreen> {
                   child: Text('Done', style: TextStyle(color: Colors.white, fontSize: 18)),
                   color: Color(0xFF6FCACE),
                   onPressed: (){
-                    //Send to Firebase
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                            MSDScreen()
-                        )
-                    );
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                        return AlertDialog(
+                          // Retrieve the text that the user has entered by using the
+                          // TextEditingController.
+                          title: Text('Please Confirm Input'),
+                          content: Text(
+                              "License No. : " + licenseNoController.text + "\n" +
+                              "Lot No. : " + lotNoController.text + "\n" +
+                              "Expiry Date : " + dateController.text + "\n" +
+                              "Location : " + locationController.text),
+                          actions: <Widget>[
+                              TextButton(
+                                onPressed: () => Navigator.pop(context, 'Cancel'),
+                                child: const Text('Cancel'),
+                              ),
+                              TextButton(
+                                onPressed: () => Navigator.pop(context, 'Continue'),
+                                child: const Text('Continue'),
+                              ),
+                            ],
+                        );
+                      },
+                      );//Send to Firebase
                   },
                 )
               )
@@ -140,6 +157,7 @@ class _ManufScreenState extends State<ManufScreen> {
       ),
     );
   }
+
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
@@ -162,6 +180,7 @@ class _ManufScreenState extends State<ManufScreen> {
   @override
   void dispose() {
     // Clean up the controller when the widget is disposed.
+    dateController.dispose();
     licenseNoController.dispose();
     lotNoController.dispose();
     locationController.dispose();
