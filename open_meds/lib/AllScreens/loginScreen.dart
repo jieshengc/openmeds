@@ -77,13 +77,25 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Text('Login'),
                 color: Color(0xFF04948E),
                 onPressed: (){
+                  // Navigator.push(context,
+                  //     MaterialPageRoute(builder: (context) => SignUpScreen()));
+                },
+              )
+            ),
+            SizedBox(height: 10),
+            Container(
+              //width: 250,
+              //height: 50,
+              child: FlatButton(
+                child: Text('Register here!', style: TextStyle(decoration: TextDecoration.underline)),
+                //color: Color(0xFF04948E),
+                onPressed: (){
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => SignUpScreen()));
                 },
               )
             ),
-            SizedBox(height: 10),
-            Text("Forgot Password?", style: TextStyle(color: Color.fromRGBO(143, 148, 251, 1), decoration: TextDecoration.underline),),
+            //Text("Forgot Password?", style: TextStyle(color: Color.fromRGBO(143, 148, 251, 1), decoration: TextDecoration.underline),),
           ],
         ),
       ),
