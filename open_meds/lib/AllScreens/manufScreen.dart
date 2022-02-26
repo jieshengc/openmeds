@@ -122,6 +122,11 @@ class _ManufScreenState extends State<ManufScreen> {
                 height: 50,
                 child: FlatButton(
                   child: Text('Done', style: TextStyle(color: Colors.white, fontSize: 18)),
+                  shape: RoundedRectangleBorder(side: BorderSide(
+                      color: Color(0xFF6FCACE),
+                      width: 1,
+                      style: BorderStyle.solid
+                  ), borderRadius: BorderRadius.circular(5)),
                   color: Color(0xFF6FCACE),
                   onPressed: (){
                       showDialog(
