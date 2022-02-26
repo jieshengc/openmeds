@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:open_meds/AllScreens/msdScreen.dart';
+import 'package:date_time_picker/date_time_picker.dart';
 
 class ManufScreen extends StatefulWidget {
   @override
@@ -8,6 +9,10 @@ class ManufScreen extends StatefulWidget {
 }
 
 class _ManufScreenState extends State<ManufScreen> {
+  final licenseNoController = TextEditingController();
+  final lotNoController = TextEditingController();
+  DateTime selectedDate = DateTime.now();
+  final locationController = TextEditingController();
 
   @override
   void initState() {
@@ -24,7 +29,7 @@ class _ManufScreenState extends State<ManufScreen> {
           children: <Widget>[
             SizedBox(height: 150),
             Container(
-                height: 180,
+                height: 150,
                 width: 400,
                 decoration: BoxDecoration(
                     image: DecorationImage(
@@ -44,6 +49,7 @@ class _ManufScreenState extends State<ManufScreen> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: TextField(
+                    controller: licenseNoController,
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: "Licence No.",
@@ -60,6 +66,7 @@ class _ManufScreenState extends State<ManufScreen> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: TextField(
+                    controller: lotNoController,
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: "Lot No.",
@@ -77,9 +84,13 @@ class _ManufScreenState extends State<ManufScreen> {
                   ),
                   child: TextField(
                     decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: "Expiry Date",
-                        hintStyle: TextStyle(color: Colors.grey[400])
+                      border: InputBorder.none,
+                      hintText: "Expiry Date: " + "${selectedDate.toLocal()}".split(' ')[0],
+                      hintStyle: TextStyle(color: Colors.grey[400]),
+                      suffixIcon: IconButton(
+                        onPressed: () => _selectDate(context),
+                        icon: Icon(Icons.keyboard_arrow_down),
+                      ),
                     ),
                   ),
                 ),
@@ -92,6 +103,7 @@ class _ManufScreenState extends State<ManufScreen> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: TextField(
+                    controller: locationController,
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: "Manufacturing Location",
@@ -104,12 +116,12 @@ class _ManufScreenState extends State<ManufScreen> {
             SizedBox(height: 30,),
             Container(
                 width: 250,
-                //height: 50,
+                height: 50,
                 child: FlatButton(
-                  child: Text('Done'),
-                  color: Color(0xFF04948E),
+                  child: Text('Done', style: TextStyle(color: Colors.white, fontSize: 18)),
+                  color: Color(0xFF6FCACE),
                   onPressed: (){
-                    //Submit to Firebase
+                    //Send to Firebase
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -119,9 +131,33 @@ class _ManufScreenState extends State<ManufScreen> {
                     );
                   },
                 )
-            )],
+              )
+            ],
         ),
       ),
     );
   }
+
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: selectedDate,
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2030),
+    );
+    if (picked != null && picked != selectedDate)
+      setState(() {
+        selectedDate = picked;
+      });
+  }
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    licenseNoController.dispose();
+    lotNoController.dispose();
+    locationController.dispose();
+    super.dispose();
+  }
+
 }

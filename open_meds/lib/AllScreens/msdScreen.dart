@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:open_meds/AllScreens/signuppage.dart';
 import 'package:open_meds/AllScreens/suppdistScreen.dart';
 import 'package:open_meds/AllScreens/manufScreen.dart';
 
@@ -26,7 +27,7 @@ class _MSDScreenState extends State<MSDScreen> {
           children: <Widget>[
             SizedBox(height: 150),
             Container(
-                height: 180,
+                height: 150,
                 width: 400,
                 decoration: BoxDecoration(
                     image: DecorationImage(
@@ -45,13 +46,13 @@ class _MSDScreenState extends State<MSDScreen> {
                       child: Text('Add Drug (Manufacturer)',
                           textAlign: TextAlign.center,
                           style: TextStyle(color: Colors.white, fontSize: 18)),
-                      color: Color(0xFF04948E),
+                      color: Color(0xFF6FCACE),
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                SuppDistScreen()
+                                ManufScreen()
                           )
                         );
                       },
@@ -65,13 +66,33 @@ class _MSDScreenState extends State<MSDScreen> {
                       child: Text('Update Drug Status (Supplier/Distributor)',
                           textAlign: TextAlign.center,
                           style: TextStyle(color: Colors.white, fontSize: 18)),
-                      color: Color(0xFF04948E),
+                      color: Color(0xFF6FCACE),
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    ManufScreen()
+                                    SuppDistScreen()
+                            )
+                        );
+                      },
+                    )
+                ),
+                SizedBox(height: 30),
+                Container(
+                    width: 250,
+                    height: 80,
+                    child: FlatButton(
+                      child: Text('Logout',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: Colors.white, fontSize: 18)),
+                      color: Color(0xFF6FCACE),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    SignUpScreen()
                             )
                         );
                       },

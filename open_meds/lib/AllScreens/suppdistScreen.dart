@@ -8,7 +8,6 @@ class SuppDistScreen extends StatefulWidget {
 }
 
 class _SuppDistScreenState extends State<SuppDistScreen> {
-
   @override
   void initState() {
     // TODO: implement initState
@@ -24,7 +23,7 @@ class _SuppDistScreenState extends State<SuppDistScreen> {
           children: <Widget>[
             SizedBox(height: 150),
             Container(
-                height: 180,
+                height: 150,
                 width: 400,
                 decoration: BoxDecoration(
                     image: DecorationImage(
@@ -88,22 +87,23 @@ class _SuppDistScreenState extends State<SuppDistScreen> {
             SizedBox(height: 30,),
             Container(
                 width: 250,
-                //height: 50,
+                height: 50,
                 child: FlatButton(
-                  child: Text('Done'),
-                  color: Color(0xFF04948E),
+                  child: Text('Done', style: TextStyle(color: Colors.white, fontSize: 18)),
+                  color: Color(0xFF6FCACE),
                   onPressed: (){
-                    //Submit to Firebase
+                    //Send to Firebase
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                MSDScreen()
+                            MSDScreen()
                         )
                     );
                   },
                 )
-            )],
+              )
+            ],
         ),
       ),
     );
