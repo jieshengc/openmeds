@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:open_meds/AllScreens/msdScreen.dart';
 import 'package:date_time_picker/date_time_picker.dart';
+import 'package:intl/intl.dart';
 
 class ManufScreen extends StatefulWidget {
   @override
@@ -11,6 +12,7 @@ class ManufScreen extends StatefulWidget {
 class _ManufScreenState extends State<ManufScreen> {
   final licenseNoController = TextEditingController();
   final lotNoController = TextEditingController();
+  final dateController = TextEditingController();
   DateTime selectedDate = DateTime.now();
   final locationController = TextEditingController();
 
@@ -83,6 +85,7 @@ class _ManufScreenState extends State<ManufScreen> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: TextField(
+                    controller: dateController,
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: "Expiry Date: " + "${selectedDate.toLocal()}".split(' ')[0],
@@ -148,6 +151,11 @@ class _ManufScreenState extends State<ManufScreen> {
     if (picked != null && picked != selectedDate)
       setState(() {
         selectedDate = picked;
+        dateController
+          ..text = DateFormat.yMMMd().format(selectedDate)
+          ..selection = TextSelection.fromPosition(TextPosition(
+              offset: dateController.text.length,
+              affinity: TextAffinity.upstream));
       });
   }
 

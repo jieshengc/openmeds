@@ -113,7 +113,7 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(
               height: 20, 
               child: FlatButton(
-                child: Text('Not a MSD? Click here!', 
+                child: Text('Return to Login Page!', 
                             style: TextStyle(decoration: TextDecoration.underline, color: Color(0xFF6FCACE))),
                 onPressed: (){
                   Navigator.push(context,

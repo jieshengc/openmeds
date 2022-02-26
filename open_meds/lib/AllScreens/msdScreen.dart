@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:open_meds/AllScreens/loginScreen.dart';
 import 'package:open_meds/AllScreens/signuppage.dart';
 import 'package:open_meds/AllScreens/suppdistScreen.dart';
 import 'package:open_meds/AllScreens/manufScreen.dart';
@@ -92,7 +93,7 @@ class _MSDScreenState extends State<MSDScreen> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    SignUpScreen()
+                                  LoginScreen()
                             )
                         );
                       },
