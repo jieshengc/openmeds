@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:open_meds/DataModel/consumerInput.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:open_meds/AllScreens/imageScreen.dart';
 
 final ImagePicker _picker = ImagePicker();
 
@@ -80,7 +81,7 @@ class _ConsumerScreenState extends State<ConsumerScreen> {
                               children: <Widget>[
                                 ListTile(
                                   title: Text('Current Destination'),
-                                  subtitle: Text("Input data"),//detail.<>),
+                                  subtitle: Text("Singapore"),//detail.<>),
                                 ),
                               ]
                             ),
@@ -93,7 +94,30 @@ class _ConsumerScreenState extends State<ConsumerScreen> {
                       children: persons.map((p) {
                         return detailCard(p);
                       }).toList()
-                  )
+                  ),
+                  Container(
+                        width: 220,
+                        height: 40,
+                        child: FlatButton(
+                            child: Text('Image Similarity Check',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(color: Colors.white, fontSize: 18)),
+                                shape: RoundedRectangleBorder(side: BorderSide(
+                                    color: Color(0xFF6FCACE),
+                                    width: 1,
+                                    style: BorderStyle.solid
+                                ), borderRadius: BorderRadius.circular(5)),
+                            color: Color(0xFF6FCACE),
+                            onPressed: () {
+                              Navigator.push(context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          ImageScreen()
+                                  )
+                              );
+                            }
+                        )
+                    )
                 ] else ...[
                   Text("${drugState}",
                     style: TextStyle (
@@ -175,23 +199,23 @@ class _ConsumerScreenState extends State<ConsumerScreen> {
                   ListTile(
 
                     title: Text('Location History'),
-                    subtitle: Text("Input data"),//detail.<>),
+                    subtitle: Text("Singapore >  China > Singapore"),//detail.<>),
                   ),
                     ListTile(
                       title: Text('Name'),
-                      subtitle: Text("Input data"),//detail.<>),
+                      subtitle: Text("KLORPO TABLETS 5 mg"),//detail.<>),
                     ),
         ListTile(
           title: Text('Batch Number'),
-          subtitle: Text("Input data"),//detail.<>),
+          subtitle: Text("A18"),//detail.<>),
         ),
         ListTile(
           title: Text('Expiry Date'),
-          subtitle: Text("Input data"),//detail.<>),
+          subtitle: Text("Aug 8, 2025"),//detail.<>),
         ),
         ListTile(
           title: Text('Ingredients'),
-          subtitle: Text("Input data"),//detail.<>),
+          subtitle: Text("CHLORDIAZEPOXIDE HCl EQV CHLORDIAZEPOXIDE"),//detail.<>),
         ),
 
                 ],

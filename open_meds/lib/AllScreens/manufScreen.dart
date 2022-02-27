@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'dart:convert';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:open_meds/AllScreens/msdScreen.dart';
 import 'package:date_time_picker/date_time_picker.dart';
@@ -147,8 +149,15 @@ class _ManufScreenState extends State<ManufScreen> {
                                 child: const Text('Cancel'),
                               ),
                               TextButton(
-                                onPressed: () => Navigator.pop(context, 'Continue'),
-                                child: const Text('Continue'),
+                                onPressed: () => {
+                                  Navigator.push(context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            MSDScreen()
+                                    )
+                                  )
+                                },
+                                child: const Text('Save'),
                               ),
                             ],
                         );
@@ -162,7 +171,6 @@ class _ManufScreenState extends State<ManufScreen> {
       ),
     );
   }
-
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(

@@ -48,7 +48,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: TextField(
                     decoration: InputDecoration(
                         border: InputBorder.none,
-                        hintText: "Company Name",
+                        hintText: "Email",
                         hintStyle: TextStyle(color: Colors.grey[400])
                     ),
                   ),
@@ -62,6 +62,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: TextField(
+                    obscureText: true,
+                    obscuringCharacter: "*",
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: "Password",
@@ -112,13 +114,24 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: Text('Sign Up', style: TextStyle(color: Colors.white, fontSize: 18)),
                   color: Color(0xFF6FCACE),
                   onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) =>
-                    //     MSDScreen()
-                    //   )
-                    // );
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: Text('Your account is created!'),
+                            content: Text('We will now direct you to the home page'),
+                            actions: <Widget>[
+                                TextButton(
+                                  onPressed: () =>  {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => MSDScreen()))},
+                                  child: const Text('Continue'),
+                                ),
+                              ],
+                          );
+                      },
+                      );
                   },
                 )
             ),

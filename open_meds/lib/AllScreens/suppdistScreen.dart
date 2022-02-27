@@ -123,9 +123,15 @@ class _SuppDistScreenState extends State<SuppDistScreen> {
                               child: const Text('Cancel'),
                             ),
                             TextButton(
-                              onPressed: () =>
-                                  Navigator.pop(context, 'Continue'),
-                              child: const Text('Continue'),
+                              onPressed: () => {
+                                Navigator.push(context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          MSDScreen()
+                                  )
+                                )
+                              },
+                              child: const Text('Save'),
                             ),
                           ],
                         );

@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:open_meds/AllScreens/consumerScreen.dart';
 import 'package:open_meds/AllScreens/loginScreen.dart';
-import 'package:open_meds/AllScreens/imageMatch.dart';
 
 class LoadingScreen extends StatefulWidget {
   @override
@@ -133,26 +132,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
                       );
                     },
                   )
-                ),
-                SizedBox(height: 30),
-                Container(
-                    width: 100,
-                    height: 80,
-                    child: FlatButton(
-                        child: Text('Test Image Match',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.white, fontSize: 18)),
-                            shape: RoundedRectangleBorder(side: BorderSide(
-                                color: Color(0xFF6FCACE),
-                                width: 1,
-                                style: BorderStyle.solid
-                            ), borderRadius: BorderRadius.circular(5)),
-                        color: Color(0xFF6FCACE),
-                        onPressed: () {
-                          imageMatch();
-                        }
-                    )
-                )
+                ),           
               ],
             )
         ),

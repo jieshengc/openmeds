@@ -51,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: nameController,
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      hintText: "Company Name",
+                      hintText: "Email",
                       hintStyle: TextStyle(color: Colors.grey[400])
                     ),
                   ),
@@ -65,6 +65,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: TextField(
+                    obscureText: true,
+                    obscuringCharacter: "*",
                     controller: pwController,
                     decoration: InputDecoration(
                       border: InputBorder.none,

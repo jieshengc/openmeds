@@ -1,0 +1,97 @@
+[
+	{
+		"Expiry": "17/10/25",
+		"Location": "\"Malaysia\"",
+		"licence_no": "MAL03980Z",
+		"lot_no": "A12"
+	},	
+    {
+		"Expiry": "13/05/30",
+		"Location": "\"Singapore\"",
+		"licence_no": "SIN03850P",
+	},
+    {
+		"Expiry": "24/01/27",
+		"Location": "\"Russia\"",
+		"licence_no": "RUS03740N",
+		"lot_no": "A07"
+	},	
+    {
+		"Expiry": "22/07/23",
+		"Location": "\"China\"",
+		"licence_no": "CIN13760L",
+		"lot_no": "A15"
+	},
+	{
+		"Expiry": "03/09/31",
+		"Location": "\"Thailand\"",
+		"licence_no": "TAH08245H",
+		"lot_no": "B01"
+	},	
+    {
+		"Expiry": "12/02/45",
+		"Location": "\"America\"",
+		"licence_no": "AMX47382A",
+		"lot_no": "A03"
+	},
+    {
+		"Expiry": "29/05/24",
+		"Location": "\"Canada\"",
+		"licence_no": "CAN726341O",
+		"lot_no": "A13"
+	},	
+    {
+		"Expiry": "16/11/45",
+		"Location": "\"India\"",
+		"licence_no": "IND486930D",
+		"lot_no": "B32"
+	},
+	{
+		"Expiry": "17/10/25",
+		"Location": "\"Malaysia\"",
+		"licence_no": "MAL03980Z",
+		"lot_no": "A12"
+	},	
+    {
+		"Expiry": "13/05/30",
+		"Location": "\"Singapore\"",
+		"licence_no": "SIN03850P",
+		"lot_no": "B11"
+	},
+    {
+		"Expiry": "24/01/27",
+		"Location": "\"Russia\"",
+		"licence_no": "RUS03740N",
+		"lot_no": "A07"
+	},	
+    {
+		"Expiry": "22/07/23",
+		"Location": "\"China\"",
+		"licence_no": "CIN13760L",
+		"lot_no": "A15"
+	},
+	{
+		"Expiry": "03/09/31",
+		"Location": "\"Thailand\"",
+		"licence_no": "TAH08245H",
+		"lot_no": "B01"
+	},	
+    {
+		"Expiry": "12/02/45",
+		"Location": "\"America\"",
+		"licence_no": "AMX47382A",
+		"lot_no": "A03"
+	},
+    {
+		"Expiry": "29/05/24",
+		"Location": "\"Canada\"",
+		"licence_no": "CAN726341O",
+		"lot_no": "A13"
+	},	
+    {
+		"Expiry": "16/11/45",
+		"Location": "\"India\"",
+		"licence_no": "IND486930D",
+		"lot_no": "B32"
+	}
+    ]
