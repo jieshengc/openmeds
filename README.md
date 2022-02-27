@@ -1,7 +1,7 @@
 # openmeds
 IEEE Hackathon Project
 
-#Inspiration
+# Inspiration
 
 Just 1 day ago, there was news in Malaysia reporting a growing number of digital drug dealers. Counterfeit and adulterated health products have remained a global issue that needs to be addressed as the consequences of taking counterfeit medicines can be fatal. This problem is exacerbated with the exponential growth of e-commerce due to the pandemic.
 
@@ -9,7 +9,7 @@ Digital drug dealers around the world are able to use an unlimited supply of web
 
 Hence, we want to help consumers, as well as manufacturers/suppliers/distributors to be more well-informed of how authentic the drugs that they are handling.
 
-#What it does
+# What it does
 
 OpenMeds will help consumers check if the drugs they have are real or fake. Data of real drugs will be put onto a blockchain ledger with non-confidential data made known to everyone. In addition, the characteristics of blockchain will also allow the data to be static. Hence, ensuring that the entered data is that entered by the manufacturers.
 
@@ -17,27 +17,27 @@ Consumers will input the licence number and lot number as per the packaging of t
 
 To increase usability of the manual checks, we have also incorporated an image recognition function, where consumers can take a photo of the drug packaging and it will be compared to the image present in the blockchain. If the images are not exact matches, then the drug will be considered fake.
 
-#How we built it
+# How we built it
 
 We built OpenMeds using Flutter (for app development), Firebase (to simulate blockchain technology) and Github.
 
 We adopted a 4-step approach. We first planned out our direction and features, followed by designing our prototype by drawing sketches on how our user interface will look like. Next, we began to develop our application through coding, and finally ended with tying our loose ends and testing for further deployment.
 
-#Challenges we ran into
+# Challenges we ran into
 
 1.    Finalising on the problem statement
 2.    Being limited by the 24 hours limit
 3.    Not having enough time to play all the arcade games and explore the playground
 
-#Accomplishments that we're proud of
+# Accomplishments that we're proud of
 
 We worked very well despite it being our first time working with one another. We learnt to tap on our strengths and cover each other’s weaknesses.
 
-#What we learned
+# What we learned
 
 Don’t think too much about the issue, just try and code to see if it works.
 
-#What's next for OpenMeds
+# What's next for OpenMeds
 
 We see much potential in our application. Here are some prospects:
 
