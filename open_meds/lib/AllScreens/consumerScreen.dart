@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'dart:io';
 import 'package:flutter/material.dart';
@@ -26,7 +28,7 @@ class _ConsumerScreenState extends State<ConsumerScreen> {
   @override
   void initState() {
     // TODO: implement initState
-    drugState = "";
+    drugState = "Real";
     super.initState();
   }
 
@@ -215,15 +217,16 @@ class _ConsumerScreenState extends State<ConsumerScreen> {
 
   /// Get from Camera
   _getFromCamera() async {
-    File pickedFile = await _picker.getImage(
+    final String path = "./open_meds/assets.jpeg";
+    log(path);
+    XFile? pickedFile = (await _picker.pickImage(
       source: ImageSource.camera,
-      maxWidth: 1800,
-      maxHeight: 1800,
-    ) as File;
-    final String path = (await getApplicationDocumentsDirectory()).path;
+    ));
     if (pickedFile != null) {
       setState(() {
-        imageFile = pickedFile.copy('$path/image1.png') as File;
+        log("in loop");
+        final File file = File(pickedFile.path);
+        imageFile = file.copy('$path/image1.png') as File;
       });
     }
   }
